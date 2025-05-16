@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { TaskContext } from '../context/TaskContext';
 
 export default function TaskItem({ task, index }) {
-  const { toggleHistory } = useContext(TaskContext);
+  const { toggleHistory, deleteTask } = useContext(TaskContext);
 
   return (
     <div className="task-item">
@@ -12,6 +12,12 @@ export default function TaskItem({ task, index }) {
         onClick={() => toggleHistory(index)}
       >
         历史记录
+      </button>
+      <button
+        className="task-item__delete"
+        onClick={() => deleteTask(index)}
+      >
+        删除
       </button>
       
       {task.isHistoryVisible && (

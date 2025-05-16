@@ -1,18 +1,84 @@
 .task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   border: 1px solid #ddd;
   padding: 1rem;
   margin: 0.5rem 0;
+}
+
+.task-completed-section {
+  background: rgba(248,249,250,0.9);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 1rem;
+}
+
+.completed-task {
+  color: #6c757d;
+  font-size: 0.9em;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #dee2e6;
+}
+
+.task-grid {
+  display: flex;
+  gap: 2rem;
+  align-items: start;
+}
+
+.task-main-section {
+  flex: 1;
+}
+
+.inline-completed {
+  width: 300px;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.inline-completed h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.inline-completed .completed-task {
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+  margin: 0.2rem 0;
+}
+
+@media (max-width: 768px) {
+  .task-grid {
+    flex-direction: column;
+  }
+  .inline-completed {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
 }
 .task-item__title {
   font-size: 1.2rem;
   color: #333;
 }
-.task-item__history-toggle {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 0.3rem 0.8rem;
+.task-item__complete {
+  background-color: #f8f9fa;
+  color: #212529;
+  border: 1px solid #dee2e6;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-item__complete:hover {
+  background-color: #e9ecef;
+  border-color: #ced4da;
 }
 .task-item__history {
   margin-top: 0.5rem;

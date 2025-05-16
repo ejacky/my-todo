@@ -8,15 +8,15 @@ export default function SettingsPage() {
 
   const addNewTask = () => {
     if (newTask.trim()) {
-      setTasks(prev => [
-        ...prev,
-        {
+      setTasks(prev => {
+        const newTasks = [...prev, {
           text: newTask.trim(),
           completed: false,
           history: [{ type: 'create', timestamp: Date.now() }],
           isHistoryVisible: false
-        }
-      ]);
+        }];
+        return newTasks;
+      });
       setNewTask('');
     }
   };
