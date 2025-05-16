@@ -1,11 +1,48 @@
 .task-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border: 1px solid #ddd;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-left: 4px solid #ddd;
   padding: 1rem;
   margin: 0.5rem 0;
+  background: white;
+}
+
+.task-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-item__type {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.task-item__type--once {
+  background: #e3f2fd;
+  color: #1976d2;
+  border: 1px solid #90caf9;
+}
+
+.task-item__type--daily {
+  background: #f0f4c3;
+  color: #827717;
+  border: 1px solid #dce775;
+}
+
+.task-item__due {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-item__due::before {
+  content: '⏳';
+  font-size: 0.8rem;
 }
 
 .task-completed-section {
@@ -79,6 +116,17 @@
 .task-item__complete:hover {
   background-color: #e9ecef;
   border-color: #ced4da;
+}
+
+@media (max-width: 768px) {
+  .task-item__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .task-item__type {
+    align-self: flex-start;
+  }
 }
 .task-item__history {
   margin-top: 0.5rem;
