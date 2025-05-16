@@ -1,23 +1,66 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+.task-item {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+.task-item__title {
+  font-size: 1.2rem;
+  color: #333;
+}
+.task-item__history-toggle {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+}
+.task-item__history {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid #eee;
+}
+.task-item__history-record {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+.task-item__type--complete {
+  color: #28a745;
+}
+.task-item__type--revert {
+  color: #ffc107;
+}
+.task-item__type--create {
+  color: #17a2b8;
 }
 
-.task-history {
-  margin-top: 8px;
-  padding-left: 20px;
-  border-left: 2px solid #ddd;
-  display: none;
+.main-layout {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+.main-layout__title {
+  color: #444;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
 }
 
-.history-item {
-  font-size: 12px;
-  color: #666;
-  margin: 4px 0;
-  padding: 4px;
-  background: #f5f5f5;
-  border-radius: 4px;
+.settings-layout {
+  padding: 1rem;
+}
+.settings-layout__title {
+  margin-bottom: 1.5rem;
 }
 
-.history-item:hover {
-  background: #eee;
+.task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.task-form input {
+  flex: 1;
+  padding: 0.5rem;
+}
+.task-form button {
+  padding: 0.5rem 1rem;
 }
